@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 40, 0.6);
+      z-index: 0;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 40px 30px;
+      width: 350px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .login-container h2 {
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 6px;
+      color: #e0e0e0;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .input-group input::placeholder {
+      color: #bdbdbd;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4b6fff;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #3a56cc;
+    }
+
+    .forgot-password {
+      margin-top: 15px;
+      font-size: 0.85rem;
+    }
+
+    .forgot-password a {
+      color: #a8bfff;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 400px) {
+      .login-container {
+        width: 90%;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required />
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+
+      <div class="forgot-password">
+        Don't have an account? <a href="admin_2_register.html">Register</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Simple login redirect (you can add real validation here)
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      // For now, just redirect after clicking login
+      window.location.href = "admin_3_dashboard.html";
+    });
+  </script>
+</body>
+</html>
